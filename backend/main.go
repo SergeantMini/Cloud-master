@@ -48,4 +48,5 @@ func main(){
   router.HandleFunc("/images/{id}", GetImage).Methods("GET")
   router.HandleFunc("/images/{id}", UploadImage).Methods("POST")
   http.ListenAndServe(":8000", router)
+  //navegar a "localhost:8000/images"
 }
