@@ -7,9 +7,7 @@ import (
     "github.com/gorilla/mux" //mux stands for HTTP request multiplexer
                             //mux sirve para solicitar router y dispatcher
     "github.com/ddliu/go-httpclient"  //documentación en https://github.com/ddliu/go-httpclient
-    "github.com/gbrlsnchs/httphandler" //minimalist http handler https://github.com/gbrlsnchs/httphandler
-    
- 
+    //"github.com/gbrlsnchs/httphandler" //minimalist http handler https://github.com/gbrlsnchs/httphandler
 )
 
 type Image struct {
@@ -18,7 +16,7 @@ type Image struct {
   Resolution  string  `json:"resolution,omitempty"`
 }
 
-var images []image
+var images []Image
 
 func GetImages(w http.ResponseWriter, r *http.Request) {
   json.NewEncoder(w).Encode(images)
