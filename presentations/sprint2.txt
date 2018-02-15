@@ -6,11 +6,22 @@
 - Pablo de la Rosa Michicol 150245
 ---
 
-Para el back-end esta semana tenemos que investigar que es un blob, como manejarlos y como lo vamos a almacenar en la base de datos, ademas de que base vamos a utilizar(no se con cual se sientan mas comodos trabajando)<br>
-También tenemos que conectar el back con el front y definir algunas rutas de prueba<br>
-Parel front-end tenemos que mejorar la interfaz, hacerla más dinámica y así y programar el login.
+## Actividades realizadas:
+
+* Desarrollar la interfaz planteada del login
+* Mejorar lainterfaz actual, asegurnado que sea responsiva y más dinámica
+* Asignar nombres correctos para las rutas de archivo
+* Asegurar la conexión de back-end con front-end
+* Diseñar la estructura de las tablas de nuestra base de datos
+* Posibilidad de cargar imágenes al servicio.
 
 ---
+
+## Front-end
+
+---
+
+## Back-end
 
 Se importaron librerías de http para el cliente, handler, request e interceptor. Esto con la finalidad de tener un mejor manejo de las peticiones al servicio.
 
