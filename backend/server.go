@@ -1,13 +1,15 @@
 package main
 
 import (
-    "fmt"
-    "net/http"
+     "fmt"
+    "net/http" //Get, Head, Post, and PostForm make HTTP (or HTTPS) requests
     "encoding/json"
-    "github.com/gorilla/mux"
-  //mux stands for HTTP request multiplexer which matches an incoming
-  //request to against a list of routes (registered)
-  //mux sirve para solicitar router y dispatcher
+    "github.com/gorilla/mux" //mux stands for HTTP request multiplexer
+                            //mux sirve para solicitar router y dispatcher
+    "github.com/ddliu/go-httpclient"  //documentación en https://github.com/ddliu/go-httpclient
+    "github.com/gbrlsnchs/httphandler" //minimalist http handler https://github.com/gbrlsnchs/httphandler
+    
+ 
 )
 
 type Image struct {
@@ -51,7 +53,6 @@ func someFunc(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-
     //http.HandleFunc("/", helloWorld)
     //http.HandleFunc("/func", someFunc)
     router := mux.NewRouter()
@@ -61,5 +62,11 @@ func main() {
     router.HandleFunc("/images/{id}", GetImage).Methods("GET")
     router.HandleFunc("/images/{id}", UploadImage).Methods("POST")
     http.ListenAndServe(":8000", router)
-
+    httpclient.Defaults(httpclient.Map {
+        httpclient.OPT_USERAGENT: "primer httpclient",
+    })
+    res, err := httpclient.Get("http://google.com/search", map[string]string{
+        "q": "news",
+    })
+    println(res.StatusCode, err)
 }
