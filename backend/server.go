@@ -3,6 +3,8 @@ package main
 import (
      "fmt"
     "net/http" //Get, Head, Post, and PostForm make HTTP (or HTTPS) requests
+    "net/http/httptrace" //Package httptrace provides mechanisms to trace the events within HTTP client requests.
+    "net/http/httputil" //Package httputil provides HTTP utility functions, complementing the more common ones in the net/http package.
     "encoding/json"
     "github.com/gorilla/mux" //mux stands for HTTP request multiplexer
                             //mux sirve para solicitar router y dispatcher
